@@ -76,7 +76,7 @@
 .chart-end-label {
   fill: var(--color-bone);
   font-family: var(--font-text);
-  font-size: 14px;
+  font-size: var(--text-sm);
 }
 
 .chart-tooltip {

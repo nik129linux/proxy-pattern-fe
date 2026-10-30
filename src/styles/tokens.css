@@ -19,8 +19,8 @@
   --font-display: 'Big Shoulders Display', sans-serif;
   --font-text: 'Big Shoulders Text', sans-serif;
   --font-data: 'Martian Mono', monospace;
-  --text-sm: 0.9375rem;
-  --text-base: 1.125rem;
+  --text-sm: 1.0625rem;
+  --text-base: 1.25rem;
   --text-lg: 1.5rem;
   --text-xl: clamp(2rem, 4vw, 3rem);
   --text-2xl: clamp(3rem, 7vw, 5.5rem);
