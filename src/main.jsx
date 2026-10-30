@@ -1,9 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import '@fontsource/big-shoulders-display/800';
-import '@fontsource/big-shoulders-text/500';
-import '@fontsource/big-shoulders-text/700';
-import '@fontsource/martian-mono/400';
+import '@fontsource-variable/source-serif-4/opsz';
+import '@fontsource-variable/hanken-grotesk';
 import './styles/tokens.css';
 import './styles/main.css';
 import './styles/board.css';

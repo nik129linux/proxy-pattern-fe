@@ -42,7 +42,7 @@ function Dashboard() {
           )}
           <div className="service-grid">
             {summary.data
-              ? summary.data.services.map((metrics) => <ServiceCard key={metrics.serviceId} metrics={metrics} />)
+              ? summary.data.services.map((metrics, index) => <ServiceCard key={metrics.serviceId} metrics={metrics} index={index} />)
               : SERVICE_IDS.map((id) => <ServiceCardSkeleton key={id} />)}
           </div>
         </section>

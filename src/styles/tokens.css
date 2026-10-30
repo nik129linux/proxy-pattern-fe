@@ -1,31 +1,44 @@
 :root {
-  /* Color: hazard yellow carries the page, red is reserved for the alarm */
-  --color-signal: oklch(0.87 0.18 95);
-  --color-signal-deep: oklch(0.78 0.17 90);
-  --color-ink: oklch(0.21 0.02 95);
-  --color-ink-raised: oklch(0.28 0.02 95);
-  --color-ink-line: oklch(0.38 0.02 95);
-  --color-bone: oklch(0.96 0.02 95);
-  --color-bone-dim: oklch(0.8 0.02 95);
-  --color-alarm: oklch(0.52 0.21 27);
-  --color-alarm-deep: oklch(0.42 0.18 27);
+  /* Sky: the hero gradient, sampled from deep indigo down to periwinkle */
+  --sky-0: #100f49;
+  --sky-1: #1e187a;
+  --sky-2: #3634bc;
+  --sky-3: #4f4bf7;
+  --sky-4: #8687fd;
 
-  /* Chart series, on the ink board */
-  --series-inventory: oklch(0.8 0.16 92);
-  --series-orders: oklch(0.7 0.17 340);
-  --series-payments: oklch(0.7 0.13 235);
+  /* Surfaces */
+  --color-lavender: #cdcefe;
+  --color-paper: #f7f7ff;
+  --color-navy: #191838;
+  --color-navy-raised: #2a2950;
+  --color-navy-line: #4a4860;
+
+  /* Text */
+  --color-ink: #191838;
+  --color-muted: #56557a;
+  --color-paper-dim: #b9b9e0;
+  --color-hairline: #e4e4f4;
+
+  /* Red means failure and nothing else */
+  --color-alarm: #d3263a;
+
+  /* Chart series, on paper */
+  --series-inventory: #3a3ee6;
+  --series-orders: #0f9ab0;
+  --series-payments: #e2762f;
 
   /* Type */
-  --font-display: 'Big Shoulders Display', sans-serif;
-  --font-text: 'Big Shoulders Text', sans-serif;
-  --font-data: 'Martian Mono', monospace;
-  --text-sm: 1.0625rem;
-  --text-base: 1.25rem;
-  --text-lg: 1.5rem;
-  --text-xl: clamp(2rem, 4vw, 3rem);
-  --text-2xl: clamp(3rem, 7vw, 5.5rem);
-  --text-hero: clamp(5rem, 19.5vw, 19rem);
-  --data-sm: 0.75rem;
+  --font-display: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
+  --font-text: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-data: var(--font-text);
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: clamp(2.25rem, 4vw, 2.75rem);
+  --text-number: clamp(3rem, 5vw, 4rem);
+  --text-hero: clamp(3.25rem, 8vw, 5.625rem);
+  --data-sm: 0.8125rem;
   --data-base: 0.875rem;
 
   /* Spacing */
@@ -39,10 +52,14 @@
   --space-8: 64px;
   --space-9: 96px;
 
-  /* Radius: flap tiles are small and mechanical */
-  --radius-tile: 3px;
-  --radius-control: 4px;
-  --radius-panel: 8px;
+  /* Radius */
+  --radius-tile: 8px;
+  --radius-control: 16px;
+  --radius-panel: 24px;
+  --radius-pill: 9999px;
+
+  /* Floating artifact: one light from above, tinted to the navy */
+  --shadow-artifact: 0 0 0 1px rgb(25 24 56 / 5%), 0 20px 25px -5px rgb(25 24 56 / 10%), 0 8px 10px -6px rgb(25 24 56 / 10%);
 
   /* Motion */
   --dur-press: 140ms;

@@ -12,7 +12,7 @@ import { usePolling } from '../hooks/usePolling.js';
 import { formatMs, SERVICE_IDS, serviceLabel } from '../lib/format.js';
 
 const axisText = {
-  fill: 'var(--color-bone-dim)',
+  fill: 'var(--color-muted)',
   fontFamily: 'var(--font-data)',
   fontSize: 'var(--data-sm)',
 };
@@ -84,26 +84,26 @@ export function LatencyChart({ refreshKey }) {
         <div className="chart-frame">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData} margin={{ top: 8, right: 96, bottom: 8, left: 0 }}>
-              <CartesianGrid stroke="var(--color-ink-line)" vertical={false} />
+              <CartesianGrid stroke="var(--color-hairline)" vertical={false} />
               <XAxis
                 dataKey="position"
                 type="number"
                 domain={[1, 20]}
                 allowDecimals={false}
-                stroke="var(--color-ink-line)"
+                stroke="var(--color-hairline)"
                 tick={axisText}
                 tickLine={false}
               />
               <YAxis
                 width={64}
-                stroke="var(--color-ink-line)"
+                stroke="var(--color-hairline)"
                 tick={axisText}
                 tickLine={false}
                 tickFormatter={formatMs}
               />
               <Tooltip
                 content={<LatencyTooltip />}
-                cursor={{ stroke: 'var(--color-bone-dim)', strokeWidth: 1 }}
+                cursor={{ stroke: 'var(--color-muted)', strokeWidth: 1 }}
               />
               {series.map(({ service, points }) => (
                 <Line

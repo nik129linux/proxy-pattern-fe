@@ -1,12 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { formatCount, formatMs, formatPercent, isDegraded, serviceLabel } from '../lib/format.js';
-import { alarmFlip } from '../lib/motion.js';
-import { FlapNumber } from './FlapNumber.jsx';
+import { alarmFlip, floatIn } from '../lib/motion.js';
+import { CountNumber } from './CountNumber.jsx';
 
-export function ServiceCard({ metrics }) {
+export function ServiceCard({ metrics, index }) {
   const degraded = isDegraded(metrics.errorRate);
   const card = useRef(null);
   const wasDegraded = useRef(degraded);
+
+  useEffect(() => {
+    floatIn(card.current, index);
+  }, [index]);
 
   useEffect(() => {
     if (degraded && !wasDegraded.current) alarmFlip(card.current);
@@ -20,7 +24,7 @@ export function ServiceCard({ metrics }) {
         {degraded && <p className="service-card-alarm">Con problemas: {formatPercent(metrics.errorRate)} de error</p>}
       </header>
       <div className="service-card-total">
-        <FlapNumber value={formatCount(metrics.totalCalls)} />
+        <CountNumber value={metrics.totalCalls} format={formatCount} />
         <p>llamadas</p>
       </div>
       <dl className="service-card-stats">

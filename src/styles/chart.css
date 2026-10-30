@@ -1,6 +1,6 @@
 .ink-panel {
-  background: var(--color-ink);
-  color: var(--color-bone);
+  background: var(--color-navy);
+  color: var(--color-paper);
   border-radius: var(--radius-panel);
   padding: var(--space-5);
   display: grid;
@@ -8,12 +8,22 @@
 }
 
 .ink-panel :focus-visible {
-  outline: 3px solid var(--color-signal);
+  outline: 3px solid var(--color-lavender);
   outline-offset: 3px;
 }
 
+.latency-panel {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-artifact);
+}
+
+.latency-panel :focus-visible {
+  outline-color: var(--color-ink);
+}
+
 .latency-panel .section-title {
-  color: var(--color-bone);
+  color: var(--color-ink);
 }
 
 .chart-legend {
@@ -31,7 +41,7 @@
   align-items: center;
   gap: var(--space-2);
   font-size: var(--text-sm);
-  color: var(--color-bone);
+  color: var(--color-ink);
 }
 
 .chart-legend-mark {
@@ -59,7 +69,7 @@
 
 .chart-loading {
   height: 360px;
-  background: var(--color-ink-raised);
+  background: var(--color-hairline);
   border-radius: var(--radius-control);
 }
 
@@ -74,14 +84,14 @@
 }
 
 .chart-end-label {
-  fill: var(--color-bone);
+  fill: var(--color-ink);
   font-family: var(--font-text);
   font-size: var(--text-sm);
 }
 
 .chart-tooltip {
-  background: var(--color-ink-raised);
-  color: var(--color-bone);
+  background: var(--color-navy-raised);
+  color: var(--color-paper);
   border-radius: var(--radius-control);
   padding: var(--space-3);
   font-size: var(--text-sm);
@@ -112,6 +122,6 @@
 
 .chart-empty {
   font-size: var(--text-lg);
-  color: var(--color-bone);
+  color: var(--color-muted);
   padding-block: var(--space-7);
 }

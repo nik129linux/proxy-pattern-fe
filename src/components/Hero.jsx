@@ -1,32 +1,33 @@
 import { useEffect, useRef } from 'react';
-import { heroIn } from '../lib/motion.js';
+import { heroDrift, heroIn } from '../lib/motion.js';
 
 export function Hero({ onSimulate, running, status }) {
-  const root = useRef(null);
+  const copy = useRef(null);
 
   useEffect(() => {
-    heroIn(root.current.querySelectorAll('.hero-line > span'));
+    heroIn(copy.current.querySelectorAll('.hero-line > span'));
+    return heroDrift(copy.current);
   }, []);
 
   return (
-    <header ref={root} className="hero">
-      <h1 aria-label="Punto de control">
-        <span className="hero-line" aria-hidden="true"><span>Punto de</span></span>
-        <span className="hero-line" aria-hidden="true"><span>control</span></span>
-      </h1>
-      <div className="hero-bar">
+    <header className="hero">
+      <div className={running ? 'sky is-running' : 'sky'} aria-hidden="true" />
+      <div ref={copy} className="hero-copy">
+        <h1 aria-label="Punto de control">
+          <span className="hero-line" aria-hidden="true"><span>Punto de control</span></span>
+        </h1>
         <p className="hero-lede">
           Cada llamada a Inventario, Pedidos y Pagos cruza este proxy antes de llegar al servicio.
           Aquí queda su registro, con duración, estado y error.
         </p>
-        <div className="hero-action">
+        <div className="hero-actions">
           <button type="button" className="button-load" onClick={onSimulate} disabled={running}>
             {running ? 'Enviando 50 llamadas' : 'Simular carga'}
           </button>
-          <p className="hero-status" role="status">{status}</p>
+          <a className="button-ghost" href="#registro">Ver registro</a>
         </div>
+        <p className="hero-status" role="status">{status}</p>
       </div>
-      <div className={running ? 'barrier is-running' : 'barrier'} aria-hidden="true" />
     </header>
   );
 }

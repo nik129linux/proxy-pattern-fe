@@ -56,7 +56,7 @@ export function LogBoard({ refreshKey }) {
   const totalPages = Math.max(page.totalPages, 1);
 
   return (
-    <section className="ink-panel log-board" aria-labelledby="logs-title">
+    <section id="registro" className="ink-panel log-board" aria-labelledby="logs-title">
       <h2 id="logs-title" className="section-title">Registro en vivo</h2>
       <LogFilters filters={filters} onChange={setFilters} />
       {error && (
