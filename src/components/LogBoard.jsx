@@ -3,6 +3,7 @@ import { getLogs } from '../api/metricsApi.js';
 import { usePolling } from '../hooks/usePolling.js';
 import { isRangeInvalid, toQuery } from '../lib/logFilters.js';
 import { rowDrop } from '../lib/motion.js';
+import { hoverRow } from '../lib/sceneBridge.js';
 import { LogFilters } from './LogFilters.jsx';
 import { LogRow } from './LogRow.jsx';
 
@@ -64,7 +65,7 @@ export function LogBoard({ refreshKey }) {
           No pudimos leer el registro. {error} Reintentamos en 3 segundos.
         </p>
       )}
-      <div className="log-table-wrap">
+      <div className="log-table-wrap" data-lenis-prevent-touch>
         <table className="log-table">
           <thead>
             <tr>
@@ -75,7 +76,10 @@ export function LogBoard({ refreshKey }) {
               <th scope="col">estado</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody
+            onPointerOver={(event) => hoverRow(event.target.closest('.log-row'))}
+            onPointerLeave={() => hoverRow(null)}
+          >
             {loading && !data ? Array.from({ length: 5 }, (_, rowIndex) => (
               <tr className="log-skeleton-row service-card-skeleton" aria-hidden="true" key={rowIndex}>
                 {Array.from({ length: 5 }, (_, cellIndex) => (

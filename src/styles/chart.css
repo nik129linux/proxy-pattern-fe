@@ -1,8 +1,6 @@
 .ink-panel {
-  background: var(--color-navy);
   color: var(--color-paper);
   border-radius: var(--radius-panel);
-  padding: var(--space-5);
   display: grid;
   gap: var(--space-5);
 }
@@ -13,6 +11,7 @@
 }
 
 .latency-panel {
+  padding: var(--space-6);
   background: var(--color-paper);
   color: var(--color-ink);
   box-shadow: var(--shadow-artifact);

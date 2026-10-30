@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { heroDrift, heroIn } from '../lib/motion.js';
 
-export function Hero({ onSimulate, running, status }) {
+export function Hero({ onSimulate, onViewLogs, running, status }) {
   const copy = useRef(null);
 
   useEffect(() => {
@@ -24,7 +24,16 @@ export function Hero({ onSimulate, running, status }) {
           <button type="button" className="button-load" onClick={onSimulate} disabled={running}>
             {running ? 'Enviando 50 llamadas' : 'Simular carga'}
           </button>
-          <a className="button-ghost" href="#registro">Ver registro</a>
+          <a
+            className="button-ghost"
+            href="#registro"
+            onClick={(event) => {
+              event.preventDefault();
+              onViewLogs();
+            }}
+          >
+            Ver registro
+          </a>
         </div>
         <p className="hero-status" role="status">{status}</p>
       </div>
