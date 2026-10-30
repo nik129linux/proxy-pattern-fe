@@ -305,6 +305,14 @@ main {
   line-height: 1;
 }
 
+@media (min-width: 900px) {
+  .hero h1 {
+    display: flex;
+    gap: 0.22em;
+    font-size: min(15vw, 19rem);
+  }
+}
+
 @media (max-width: 520px) {
   .hero {
     padding-inline: var(--space-4);
