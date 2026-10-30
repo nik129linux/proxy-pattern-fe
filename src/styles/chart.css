@@ -1,0 +1,117 @@
+.ink-panel {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  border-radius: var(--radius-panel);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-5);
+}
+
+.ink-panel :focus-visible {
+  outline: 3px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
+.latency-panel .section-title {
+  color: var(--color-bone);
+}
+
+.chart-legend {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chart-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-bone);
+}
+
+.chart-legend-mark {
+  display: block;
+  width: 16px;
+  height: 2px;
+}
+
+.chart-legend-mark.series-inventory {
+  background: var(--series-inventory);
+}
+
+.chart-legend-mark.series-orders {
+  background: var(--series-orders);
+}
+
+.chart-legend-mark.series-payments {
+  background: var(--series-payments);
+}
+
+.chart-frame {
+  width: 100%;
+  height: 360px;
+}
+
+.chart-loading {
+  height: 360px;
+  background: var(--color-ink-raised);
+  border-radius: var(--radius-control);
+}
+
+@media (max-width: 720px) {
+  .chart-frame {
+    height: 280px;
+  }
+
+  .chart-loading {
+    height: 280px;
+  }
+}
+
+.chart-end-label {
+  fill: var(--color-bone);
+  font-family: var(--font-text);
+  font-size: 14px;
+}
+
+.chart-tooltip {
+  background: var(--color-ink-raised);
+  color: var(--color-bone);
+  border-radius: var(--radius-control);
+  padding: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.chart-tooltip dl,
+.chart-tooltip dd,
+.chart-tooltip p {
+  margin: 0;
+}
+
+.chart-tooltip dl {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.chart-tooltip dl > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.chart-tooltip dd {
+  font-family: var(--font-data);
+  font-size: var(--data-sm);
+}
+
+.chart-empty {
+  font-size: var(--text-lg);
+  color: var(--color-bone);
+  padding-block: var(--space-7);
+}
